@@ -15,15 +15,25 @@ const NavBar = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto text-left">
-                    <NavLink to="/">
+                    <NavLink
+                        exact
+                        className={styles.NavLink}
+                        activeClassName={styles.Active}
+                        to="/">
                         <i class="fa-solid fa-house"></i>Home
                     </NavLink>
-                    <NavLink to="/signin">
+                    <NavLink
+                        className={styles.NavLink}
+                        activeClassName={styles.Active}
+                        to="/signin">
                         <i class="fas fa-sign-in-alt"></i>Sign in
                     </NavLink>
-                    <Nav.Link>
+                    <NavLink
+                        className={styles.NavLink}
+                        activeClassName={styles.Active}
+                        to="/signup">
                         <i class="fas fa-user-plus"></i>Sign up
-                    </Nav.Link>
+                    </NavLink>
                 </Nav>
             </Navbar.Collapse>
         </Container>
