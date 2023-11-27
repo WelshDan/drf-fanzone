@@ -4,16 +4,23 @@ import logo from '../assets/logo.png'
 
 const NavBar = () => {
   return (
-    <Navbar bg="light" expand="md" fixed="top">
+    <Navbar expand="md" fixed="top">
         <Container>
             <Navbar.Brand>
-                <img src={logo} alt="logo" height="45" />
+                <img src={logo} alt="logo" height="30" />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="mr-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#link">Link</Nav.Link>
+                <Nav className="ml-auto text-left">
+                    <Nav.Link>
+                        <i class="fa-solid fa-house"></i>Home
+                    </Nav.Link>
+                    <Nav.Link>
+                        <i class="fas fa-sign-in-alt"></i>Sign in
+                    </Nav.Link>
+                    <Nav.Link>
+                        <i class="fas fa-user-plus"></i>Sign up
+                    </Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Container>
