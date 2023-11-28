@@ -23,8 +23,8 @@ const SignUpForm = () => {
   const handleChange = (event) => {
     setSignUpData({
         ...signUpData,
-        [event.target.name]: event.target.value
-    })
+        [event.target.name]: event.target.value,
+    });
   };
 
   const handleSubmit = async (event) => {
