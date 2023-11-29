@@ -14,11 +14,33 @@ const NavBar = () => {
             activeClassName={styles.Active}
             to="/posts/create"
         >
-            <i className="fa-regular fa-futbol"></i>Add post
+            <i className="fa-solid fa-plus"></i>Add post
         </NavLink>
-    )
+    );
+    const loggedInIcons = <>
+        <NavLink
+            className={styles.NavLink}
+            activeClassName={styles.Active}
+            to="/supported"
+        >
+            <i className="fa-solid fa-heart"></i>Supported
+        </NavLink>
+        <NavLink
+            className={styles.NavLink}
+            activeClassName={styles.Active}
+            to="/liked"
+        >
+            <i className="fa-regular fa-futbol"></i>Liked
+        </NavLink>
+        <NavLink
+            className={styles.NavLink}
+            activeClassName={styles.Active}
+            to="/profile"
+        >
+            <i className="fa-solid fa-shirt"></i>Profile
+        </NavLink>
+    </>;
 
-    const loggedInIcons = <>{currentUser?.username}</>
     const loggedOutIcons = (
         <>
             <NavLink
@@ -46,6 +68,7 @@ const NavBar = () => {
                         <img src={logo} alt="logo" height="30" />
                     </Navbar.Brand>
                 </NavLink>
+                {currentUser && addPostIcon}
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto text-left">
