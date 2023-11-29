@@ -33,7 +33,7 @@ const SignUpForm = () => {
         await axios.post('/dj-rest-auth/registration/', signUpData)
         history.push('/signin')
     } catch(err){
-        setErrors(error.response?.data)
+        setErrors(err.response?.data)
     }
   };
 
@@ -47,10 +47,10 @@ const SignUpForm = () => {
                 <Form.Group controlId="username">
                     <Form.Label className="d-none">username</Form.Label>
                     <Form.Control
-                        className={styles.Input}
                         type="text"
                         placeholder="Username"
                         name="username"
+                        className={styles.Input}
                         value={username}
                         onChange={handleChange}
                     />
@@ -61,11 +61,11 @@ const SignUpForm = () => {
 
                 <Form.Group controlId="password1">
                     <Form.Label className="d-none">Password</Form.Label>
-                    <Form.Control
-                        className={styles.Input}
+                    <Form.Control 
                         type="password"
                         placeholder="Password"
                         name="password1"
+                        className={styles.Input}
                         value={password1}
                         onChange={handleChange}
                     />
