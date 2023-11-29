@@ -115,7 +115,7 @@ const SignUpForm = () => {
         <Image
           className={`${appStyles.FillerImage}`}
           src={
-            "https://img.freepik.com/free-photo/soccer-into-goal-success-concept_1150-5276.jpg?w=996&t=st=1701120297~exp=1701120897~hmac=2984ce82495eae7c82d6f801e1abee94362dd3f5da161fe078acf02b49a4c75f"
+            "https://cdn.pixabay.com/photo/2018/05/15/23/02/football-stadium-3404535_1280.jpg"
           }
         />
       </Col>

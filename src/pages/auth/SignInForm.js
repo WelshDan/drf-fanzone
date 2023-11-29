@@ -114,7 +114,7 @@ function SignInForm() {
       >
         <Image
           className={`${appStyles.FillerImage}`}
-          src={"https://img.freepik.com/free-photo/close-up-athlete-playing-soccer_23-2150845598.jpg?t=st=1701113607~exp=1701117207~hmac=545fa61af40a61a24f9be7fe71dbfed7bf712c8541c83cbc75ad5bd4ca7fc478&w=1060"}
+          src={"https://cdn.pixabay.com/photo/2016/11/29/02/05/audience-1866738_1280.jpg"}
         />
       </Col>
     </Row>
