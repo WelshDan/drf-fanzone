@@ -39,6 +39,13 @@ const NavBar = () => {
         >
             <i className="fa-solid fa-shirt"></i>Profile
         </NavLink>
+        <NavLink
+            className={styles.NavLink}
+            to="/"
+            onClick={() => {}}
+        >
+            <i className="fa-solid fa-shirt"></i>Sign Out
+        </NavLink>
     </>;
 
     const loggedOutIcons = (
