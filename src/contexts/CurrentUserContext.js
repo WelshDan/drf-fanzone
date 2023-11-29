@@ -15,12 +15,12 @@ export const CurrentUserProvider = ({ children }) => {
 
     const handleMount = async () => {
       try {
-          const { data } = await axiosRes.get('dj-rest-auth/user')
-          setCurrentUser(data)
-      } catch(err){
-          console.log(err)
+          const { data } = await axiosRes.get('dj-rest-auth/user');
+          setCurrentUser(data);
+      } catch (err) {
+          console.log(err);
       }
-    }
+    };
   
     useEffect(() => {
       handleMount()
