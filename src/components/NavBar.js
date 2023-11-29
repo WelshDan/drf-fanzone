@@ -7,6 +7,17 @@ import { useCurrentUser } from "../contexts/CurrentUserContext";
 
 const NavBar = () => {
     const currentUser = useCurrentUser();
+
+    const addPostIcon = (
+        <NavLink
+            className={styles.NavLink}
+            activeClassName={styles.Active}
+            to="/posts/create"
+        >
+            <i className="fa-regular fa-futbol"></i>Add post
+        </NavLink>
+    )
+
     const loggedInIcons = <>{currentUser?.username}</>
     const loggedOutIcons = (
         <>
