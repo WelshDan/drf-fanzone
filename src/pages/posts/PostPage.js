@@ -18,7 +18,7 @@ function PostPage() {
                 const [{data: post}] = await Promise.all([
                     axiosReq.get(`/posts/${id}`),
                 ]);
-                setPost({results: [post] });
+                setPost({ results: [post] });
                 console.log(post);
             }   catch(err){
                 console.log(err);
@@ -30,16 +30,16 @@ function PostPage() {
 
     return (
         <Row className="h-100">
-        <Col className="py-2 p-0 p-lg-2" lg={8}>
-            <p>Popular profiles for mobile</p>
-            <p>Post component</p>
-            <Container className={appStyles.Content}>
-            Comments
-            </Container>
-        </Col>
-        <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-            Popular profiles for desktop
-        </Col>
+            <Col className="py-2 p-0 p-lg-2" lg={8}>
+                <p>Popular profiles for mobile</p>
+                <p>Post component</p>
+                <Container className={appStyles.Content}>
+                Comments
+                </Container>
+            </Col>
+            <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
+                Popular profiles for desktop
+            </Col>
         </Row>
     );
 }
