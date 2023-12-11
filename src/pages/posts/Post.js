@@ -43,7 +43,7 @@ const Post = (props) => {
         }
     };
 
-    const handleUnike = async () => {
+    const handleUnlike = async () => {
         try {
             const { data } = await axiosRes.post(`/likes/${like_id}/`);
             setPosts((prevPosts) => ({
