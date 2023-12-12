@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import appStyles from '../../App.modules.css'
-import { axiosReq } from '../api/axiosDefaults';
-import Asset from '../components/Asset';
-import { useCurrentUser } from '../contexts/CurrentUserContext';
+import { axiosReq } from '../../api/axiosDefaults';
+import Asset from '../../components/Asset';
+import { useCurrentUser } from '../../contexts/CurrentUserContext';
+import Profile from './Profile';
 
 
 const PopularProfiles = ({ mobile }) => {
@@ -40,12 +41,12 @@ const PopularProfiles = ({ mobile }) => {
                     {mobile ? (
                         <div className="d-flex justify-content-around">
                           {popularProfiles.results.slice(0,4).map((profile) => (
-                            <p key={profile.id}>{profile.owner}</p>
+                            <Profile key={profile.id} profile={profile} mobile />
                           ))}  
                         </div>
                     ) : (
                         popularProfiles.results.map((profile) => (
-                            <p key={profile.id}>{profile.owner}</p>
+                            <Profile key={profile.id} profile={profile} />
                         ))
                     )}
                 </>

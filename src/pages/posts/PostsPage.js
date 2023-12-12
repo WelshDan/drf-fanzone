@@ -14,7 +14,7 @@ import NoResults from "../../assets/referee-stern.jpg";
 import Asset from "../../components/Asset";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
-import PopularProfiles from "../PopularProfiles";
+import PopularProfiles from "../profiles/PopularProfiles";
 
 function PostsPage({ message, filter="" }) {
     const [posts,setPosts] = useState({ results: [] });
