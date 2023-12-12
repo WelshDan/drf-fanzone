@@ -3,6 +3,7 @@ import { Card, Media, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { axiosRes } from '../../api/axiosDefaults';
 import Avatar from '../../components/Avatar';
+import { MoreDropdown } from '../../components/MoreDropdown';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import styles from "../../styles/Post.module.css";
 
@@ -69,7 +70,7 @@ const Post = (props) => {
                     </Link>
                     <div className="d-flex align-items-center">
                         <span>{updated_at}</span>
-                        {is_owner && postPage && "..."}
+                        {is_owner && postPage && <MoreDropdown />}
                     </div>
                 </Media>
             </Card.Body>
