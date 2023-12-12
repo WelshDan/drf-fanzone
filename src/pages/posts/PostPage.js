@@ -51,13 +51,16 @@ function PostPage() {
                         setPost={setPost}
                         setComments={setComments}
                     />
-                ) : comments.results.length ? (
-                    comments.results.map(comment => (
-                        <Comment key={comment.id} {...comment} />
-                    ))
                 ) : null}
                 {comments.results.length ? (
-                    'comments will go here'
+                    comments.results.map((comment) => (
+                        <Comment
+                            key={comment.id}
+                            {...comment}
+                            setPost={setPost}
+                            setComments={setComments}
+                        />
+                    ))
                 ) : currentUser ? (
                     <span>There are no comments yet!</span>
                 ) : (
