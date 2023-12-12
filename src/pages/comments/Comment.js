@@ -75,6 +75,6 @@ const Comment = (props) => {
                 )}
             </Media>
         </>
-    };
-
+    );
+};
 export default Comment;
