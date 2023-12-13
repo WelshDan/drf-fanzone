@@ -15,6 +15,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Asset from "../../components/Asset";
 import { fetchMoreData } from "../../utils/utils";
+import PopularProfiles from "../profiles/PopularProfiles";
 
 function PostPage() {
     const { id } = useParams();
@@ -43,42 +44,44 @@ function PostPage() {
     return (
         <Row className="h-100">
             <Col className="py-2 p-0 p-lg-2" lg={8}>
-                <p>Popular profiles for mobile</p>
+                <PopularProfiles mobile />
                 <Post {...post.results[0]} setPosts={setPost} PostPage />
                 <Container className={appStyles.Content}>
-                {currentUser ? (
-                    <CommentCreateForm
-                        profile_id={currentUser.profile_id}
-                        profile_image={profile_image}
-                        post={id}
-                        setPost={setPost}
-                        setComments={setComments}
-                    />
-                ) : null}
-                {comments.results.length ? (
-                    <InfiniteScroll
-                        children={comments.results.map((comment) => (
-                            <Comment
-                                key={comment.id}
-                                {...comment}
-                                setPost={setPost}
-                                setComments={setComments}
-                            />
-                        ))}
-                        dataLength={comments.results.length}
-                        loader={<Asset spinner />}
-                        hasMore={!!comments.next}
-                        next={() => fetchMoreData(comments, setComments)}
-                    />
-                ) : currentUser ? (
-                    <span>There are no comments yet!</span>
-                ) : (
-                    <span>No comments yet</span>
-                )}
+                    {currentUser ? (
+                        <CommentCreateForm
+                            profile_id={currentUser.profile_id}
+                            profile_image={profile_image}
+                            post={id}
+                            setPost={setPost}
+                            setComments={setComments}
+                        />
+                    ) : comments.results.length ? (
+                        "Comments"
+                    ) : null}
+                    {comments.results.length ? (
+                        <InfiniteScroll
+                            children={comments.results.map((comment) => (
+                                <Comment
+                                    key={comment.id}
+                                    {...comment}
+                                    setPost={setPost}
+                                    setComments={setComments}
+                                />
+                            ))}
+                            dataLength={comments.results.length}
+                            loader={<Asset spinner />}
+                            hasMore={!!comments.next}
+                            next={() => fetchMoreData(comments, setComments)}
+                        />
+                    ) : currentUser ? (
+                        <span>There are no comments yet!</span>
+                    ) : (
+                        <span>No comments yet</span>
+                    )}
                 </Container>
             </Col>
             <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-                Popular profiles for desktop
+                <PopularProfiles />
             </Col>
         </Row>
     );
